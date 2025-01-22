@@ -14,7 +14,7 @@ export const Header: React.FC = () => {
     >
       <div className="flex justify-start">
         <Link href="/">
-          <img src="/logo.png" height={40} width={120} />
+          <img src="/logo.png" height={40} width={80} />
         </Link>
       </div>
     </HeaderWrapper>

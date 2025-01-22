@@ -1,50 +1,45 @@
 import { baseApi } from "@/redux/services/base-query";
-import {
-  ILoginArgs,
-  ISignupArgs,
-  IUser
-} from "../types";
+import { IData, IUpdateArgs } from "../types";
 
 export const usersApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    me: builder.query<IUser, void>({
-      query: () => ({ url: "/users/me/" }),
-      providesTags: ["Me"],
+    getData: builder.query<IData, void>({
+      query: () => ({ url: "/get-data/" }),
+      providesTags: ["Info"],
     }),
-    currentMe: builder.query<IUser, void>({
-      query: () => ({ url: "/users/me/" }),
-      keepUnusedDataFor: 0,
-    }),
-    signup: builder.mutation<IUser, ISignupArgs>({
+    updateData: builder.mutation<IData, IUpdateArgs>({
       query: (body) => ({
-        url: "/users/signup/",
+        url: "/update-data/",
         method: "POST",
         body,
       }),
-      invalidatesTags: ["Me"],
+      invalidatesTags: ["Info"],
     }),
-    login: builder.mutation<IUser, ILoginArgs>({
+    updateFail: builder.mutation<IData, IUpdateArgs>({
       query: (body) => ({
-        url: "/users/login/",
+        url: "/update-fail/",
         method: "POST",
         body,
       }),
-      invalidatesTags: ["Me"],
+      invalidatesTags: ["Info"],
     }),
-    logout: builder.mutation<void, void>({
-      query: () => ({
-        url: "/users/logout/",
+    updateSlow: builder.mutation<IData, IUpdateArgs>({
+      query: (body) => ({
+        url: "/update-slow/",
         method: "POST",
+        body,
       }),
-      invalidatesTags: ["Me"],
+      invalidatesTags: (result) => {
+        console.log("****INVALID");
+        return ["Info"];
+      },
     }),
   }),
 });
 
 export const {
-  useMeQuery,
-  useCurrentMeQuery,
-  useLoginMutation,
-  useLogoutMutation,
-  useSignupMutation,
+  useGetDataQuery,
+  useUpdateDataMutation,
+  useUpdateFailMutation,
+  useUpdateSlowMutation,
 } = usersApi;

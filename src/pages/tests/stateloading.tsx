@@ -7,7 +7,6 @@ const StateLoadingTest = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const onTriggerNextPage = () => {
-    // 두번 연속 호출(Infinite 스크롤에서 빠르게 두번 연속 호출되는 상황 가정)
     handleNextPage();
     handleNextPage();
   };
@@ -28,6 +27,9 @@ const StateLoadingTest = () => {
     <div>
       <div className="text-base mb-10 text-customGray-800">
         Q1. 다음 페이지 버튼을 2번 연속으로 클릭하면 page는 얼마가 될까? <br />
+        <div className="text-sm mt-1">
+          * Infinite 스크롤에서 빠르게 스크롤이 돼서 두번이 거의 연달아 호출되는 상황 가정
+        </div>
       </div>
       <div className="text-lg font-semibold mb-2">page: {page}</div>
       <Button onClick={onTriggerNextPage} type="primary">
