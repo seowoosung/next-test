@@ -8,7 +8,7 @@ const State1Test = () => {
   const startTimer = () => {
     setInterval(() => {
       setCount(count + 1);
-    }, 1000); // ms 단위
+    }, 1000); // 1초
   };
 
   return (

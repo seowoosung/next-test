@@ -1,11 +1,10 @@
-import { Header } from "@/components";
-import { CHeaderHeight, CMaxWebWidth } from "@/styles/globalStyles";
-import { Layout } from "antd";
+import { CMaxWebWidth } from "@/styles/globalStyles";
+import { Layout, Menu } from "antd";
 import { colors } from "colors";
 import { NextComponentType, NextPage } from "next";
+import router from "next/router";
 import React from "react";
 import styled from "styled-components";
-import tw from "tailwind-styled-components";
 import { FlexColWrapper } from "./flex-wrapper";
 
 export interface IPageHeader {
@@ -24,7 +23,12 @@ interface IDefaultLayoutProps {
 const DefaultLayout = ({ Page, ...props }: IDefaultLayoutProps) => {
   return (
     <Layout>
-      <Header />
+      <Layout.Sider trigger={null}>
+        <div className="bg-white p-2">
+          <img src="/logo.png" width={80} />
+        </div>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]} items={menuItems} />
+      </Layout.Sider>
       <FlexColWrapper className="justify-between">
         <ContentWrapper width={CMaxWebWidth} style={{ padding: "32px 20px" }}>
           <div className="w-full">
@@ -41,17 +45,68 @@ export const getDefaultLayout = (Page: IDefaultLayoutPage, props: Record<string,
 };
 
 const ContentWrapper = styled.div<{ width: number; backgroundColor?: string }>`
-  min-height: calc(100vh - ${CHeaderHeight}px);
+  min-height: 100dvh;
   background-color: ${(props) => props.backgroundColor ?? colors.lineBlue};
   display: flex;
   max-width: ${(props) => props.width}px;
   margin: auto;
-  margin-top: ${CHeaderHeight}px;
   width: 100%;
 `;
 
-const Title = tw.div`
-font-bold
-text-lg
-mb-[12px]
-`;
+const menuItems = [
+  {
+    key: "1",
+    label: "state1",
+    onClick: () => router.push("/tests/state1"),
+  },
+  {
+    key: "2",
+    label: "state2",
+    onClick: () => router.push("/tests/state2"),
+  },
+  {
+    key: "3",
+    label: "state3",
+    onClick: () => router.push("/tests/state3"),
+  },
+  {
+    key: "4",
+    label: "stateloading",
+    onClick: () => router.push("/tests/stateloading"),
+  },
+  {
+    key: "5",
+    label: "stateredux",
+    onClick: () => router.push("/tests/stateredux"),
+  },
+  {
+    key: "6",
+    label: "rtktag",
+    onClick: () => router.push("/tests/rtktag"),
+  },
+  {
+    key: "7",
+    label: "rtkslow",
+    onClick: () => router.push("/tests/rtkslow"),
+  },
+  {
+    key: "8",
+    label: "memo",
+    onClick: () => router.push("/tests/memo"),
+  },
+  {
+    key: "9",
+    label: "question1",
+    onClick: () => router.push("/tests/question1"),
+  },
+  {
+    key: "10",
+    label: "question2",
+    onClick: () => router.push("/tests/question2"),
+  },
+  {
+    key: "11",
+    label: "question3",
+    onClick: () => router.push("/tests/question3"),
+  },
+];
