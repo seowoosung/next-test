@@ -1,0 +1,84 @@
+/* button */
+.ant-menu-horizontal {
+  border-bottom: 0px solid black !important;
+}
+
+.ant-input.line-input,
+.ant-input-password.line-input {
+  border: none;
+  border-bottom: 1px solid #e3e3e3;
+  outline: none;
+  transition: border-bottom 0.3s ease;
+  border-radius: 0px;
+}
+
+.ant-checkbox {
+  bottom: 2px;
+}
+.ant-checkbox .ant-checkbox-inner {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.ant-checkbox .ant-checkbox-inner:after {
+  inset-inline-start: 30% !important;
+}
+.ant-list-item {
+  border-bottom: 1px solid #F6F6F6 !important;
+}
+
+.ant-btn-primary {
+  box-shadow: none !important;
+}
+
+.ant-input {
+  height: 40px;
+}
+.ant-input-search .ant-input-search-button {
+  height: 42px !important;
+}
+
+.ant-input-affix-wrapper {
+  padding: 0px 11px !important;
+}
+
+.ant-divider {
+  border-color: #eee !important;
+}
+
+.ant-form-item {
+  margin-bottom: 20px;
+}
+
+.ant-form-item.margin-sm {
+  margin-bottom: 3px !important;
+}
+
+.ant-form-item .ant-form-item-label {
+  padding-bottom: 3px !important;
+  font-weight: 500;
+}
+
+.ant-form-item-label
+  > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::after {
+  display: inline-block;
+  margin-inline-end: 4px;
+  color: #ff5e48;
+  font-size: 18px;
+  line-height: 1;
+  margin-top: -13px;
+  content: "•" !important;
+}
+
+.ant-form-item-label
+  > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+  display: none !important;
+}
+
+.ant-form-hide-required-mark .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::after {
+  display: none;
+}
+
+.ant-select-lg .ant-select-selection-item {
+  font-size: 14px;
+}
