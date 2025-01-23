@@ -70,6 +70,11 @@ const menuItems = [
     onClick: () => router.push("/tests/state3"),
   },
   {
+    key: "3-2",
+    label: "state4",
+    onClick: () => router.push("/tests/state4"),
+  },
+  {
     key: "4",
     label: "stateloading",
     onClick: () => router.push("/tests/stateloading"),
@@ -95,6 +100,11 @@ const menuItems = [
     onClick: () => router.push("/tests/memo"),
   },
   {
+    key: "8-1",
+    label: "listkey",
+    onClick: () => router.push("/tests/listkey"),
+  },
+  {
     key: "9",
     label: "question1",
     onClick: () => router.push("/tests/question1"),
@@ -108,5 +118,10 @@ const menuItems = [
     key: "11",
     label: "question3",
     onClick: () => router.push("/tests/question3"),
+  },
+  {
+    key: "12",
+    label: "question4",
+    onClick: () => router.push("/tests/question4"),
   },
 ];

@@ -1,6 +1,7 @@
 import { getDefaultLayout } from "@/components/layout/default-layout";
+import { MessageContext } from "@/lib/contexts/message-provider";
 import { Button, Switch } from "antd";
-import { memo, useState } from "react";
+import { memo, useContext, useState } from "react";
 
 const MemoTest = () => {
   const [count, setCount] = useState(0);
@@ -16,7 +17,9 @@ const MemoTest = () => {
 
   return (
     <div>
-      <div className="text-base mb-10 text-customGray-800">Q. 버튼 클릭시 Render는 호출될까?</div>
+      <div className="text-base mb-10 text-customGray-800">
+        Q. 버튼 클릭시 Render message는 호출될까?
+      </div>
       <div className="text-lg">
         <div className="mb-10">
           <div>Count: {count}</div>
@@ -41,9 +44,8 @@ interface IChildButtonProps {
 }
 
 const ChildButton: React.FC<IChildButtonProps> = ({ onClick, name }) => {
-  if (typeof window !== "undefined") {
-    alert("Render");
-  }
+  const { messageApi } = useContext(MessageContext);
+  messageApi.info("Render");
   return (
     <Button onClick={onClick} type="primary">
       {name}
