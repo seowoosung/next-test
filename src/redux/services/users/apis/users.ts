@@ -30,7 +30,6 @@ export const usersApi = baseApi.injectEndpoints({
         body,
       }),
       invalidatesTags: (result) => {
-        console.log("****INVALID");
         return ["Info"];
       },
     }),

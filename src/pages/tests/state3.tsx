@@ -51,7 +51,6 @@ const State3Test = () => {
       <div className="text-lg font-semibold mb-4">
         <p>Render Count2: {renderCount2}</p>
       </div>
-
       <Button onClick={updateCount2} type="primary">
         Update Count2 (객체)
       </Button>
@@ -59,7 +58,6 @@ const State3Test = () => {
       <div className="text-lg font-semibold mb-4">
         <p>Render Count3: {renderCount3}</p>
       </div>
-
       <Button onClick={updateCount3} type="primary">
         Update Count3 (객체)
       </Button>

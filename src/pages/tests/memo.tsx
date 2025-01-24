@@ -28,9 +28,9 @@ const MemoTest = () => {
         </div>
         <div>
           {isMemoized ? (
-            <MemoizedChildButton onClick={onClick} name="Memoized Click" />
+            <MemoizedChildButton onClick={onClick} name="MemoizedChildButton Click" />
           ) : (
-            <ChildButton onClick={onClick} name="Click" />
+            <ChildButton onClick={onClick} name="ChildButton Click" />
           )}
         </div>
       </div>

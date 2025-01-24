@@ -37,17 +37,17 @@ const Question3 = () => {
       </div>
       <Switch onChange={onChange} value={refreshActive} />
       <div className="text-lg">
-        <Timer onRefresh={refresh} />
+        <ResetTimer onRefresh={refresh} />
         <div>시간: {seconds}초</div>
       </div>
     </div>
   );
 };
 
-interface ITimerProps {
+interface IResetTimerProps {
   onRefresh: () => void;
 }
-const Timer: React.FC<ITimerProps> = ({ onRefresh }) => {
+const ResetTimer: React.FC<IResetTimerProps> = ({ onRefresh }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       onRefresh();
