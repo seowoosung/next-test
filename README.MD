@@ -10,6 +10,7 @@ superplate is a Next.js all-in-one project generator. Create your project with t
 
 ```bash
     cp .env.example .env
+    yarn install
 ```
 
 ### Running the development server.
