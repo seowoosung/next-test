@@ -19,12 +19,6 @@ superplate is a Next.js all-in-one project generator. Create your project with t
     yarn dev
 ```
 
-### Running the production server.
-
-```bash
-    yarn start
-```
-
 ## Commit Rule
 
 ### Convention check
