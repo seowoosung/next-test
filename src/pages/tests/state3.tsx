@@ -31,6 +31,7 @@ const State3Test = () => {
   };
 
   const updateCount3 = () => {
+    count3.value = 1;
     setCount3(count3);
   };
 

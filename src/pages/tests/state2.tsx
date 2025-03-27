@@ -1,20 +1,18 @@
 import { getDefaultLayout } from "@/components/layout/default-layout";
-import { MessageContext } from "@/lib/contexts/message-provider";
 import { Button } from "antd";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const State2Test = () => {
   const [count, setCount] = useState(0);
-  const { messageApi } = useContext(MessageContext);
 
   const handleClick = () => {
-    if (count >= 5) {
-      messageApi.info("5번 클릭");
+    if (count >= 4) {
+      setCount(100);
     }
   };
 
   const getClick = () => {
-    if (count >= 7) {
+    if (count >= 3) {
       return count;
     }
     return "-";
@@ -30,9 +28,9 @@ const State2Test = () => {
   return (
     <div>
       <div className="text-base mb-10 text-customGray-800">
-        Q1. Increment 버튼을 5번 클릭하면 message는 출력될까? <br />
+        Q1. Increment 버튼을 4번 클릭하면 count는 100이 그려질까? <br />
         <br />
-        Q2. Increment 버튼을 7번 클릭하면 getClick에는 뭐가 출력될까?
+        Q2. Increment 버튼을 3번 클릭하면 getClick에는 어떤 값이 그려질될까?
       </div>
       <div className="text-lg font-semibold mb-2">getClick: {getClick()}</div>
       <div className="text-lg font-semibold mb-2">Count: {count}</div>
